@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/persona")
@@ -34,6 +35,19 @@ public class PersonaController {
     public ResponseEntity<List<Persona>> findPersonasFiltroPromedioAcumulado(@RequestParam("nota") String notaFiltro) {
         List<Persona> personaList = personaService.findPersonaConFiltroPromedioAcumulado(Float.valueOf(notaFiltro));
         return ResponseEntity.ok(personaList);
+    }
+
+    @GetMapping("/get-nombre-personas-con-edad-mayor25")
+    public ResponseEntity<List<String>> getNombrePersonasEdadMayor25() {
+        List<String> nombresPersonas = personaService.getNombrePersonasEdadMayor25();
+        return ResponseEntity.ok(nombresPersonas);
+    }
+
+
+    @GetMapping("/get-personas-por-edad")
+    public ResponseEntity< Map<Integer, List<Persona>>> getPersonasPorEdad() {
+        Map<Integer, List<Persona>> personasPorEdad = personaService.agruparCantidadPersonasPorEdad();
+        return ResponseEntity.ok(personasPorEdad);
     }
 
 }
