@@ -6,6 +6,27 @@
 	},
 	"item": [
 		{
+			"name": "obtener personas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/persona/obtener-todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"persona",
+						"obtener-todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "obtener personas filtro promedio acumulado",
 			"request": {
 				"method": "GET",
@@ -33,12 +54,12 @@
 			"response": []
 		},
 		{
-			"name": "obtener personas",
+			"name": "obtener nombres de personas con edad mayor que 25",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/persona",
+					"raw": "http://localhost:8081/api/persona/get-nombre-personas-con-edad-mayor25",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -46,7 +67,92 @@
 					"port": "8081",
 					"path": [
 						"api",
-						"persona"
+						"persona",
+						"get-nombre-personas-con-edad-mayor25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener personas agrupadas por edad",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/persona/get-personas-agrupadas-por-edad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"persona",
+						"get-personas-agrupadas-por-edad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener personas con nombres en mayusculas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/persona/peek-nombres-mayuscula",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"persona",
+						"peek-nombres-mayuscula"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener personas ordenadas por edad",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/persona/comparator-sorted-edades",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"persona",
+						"comparator-sorted-edades"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener ciudades sin repetir",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/persona/distinct-ciudades",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"persona",
+						"distinct-ciudades"
 					]
 				}
 			},

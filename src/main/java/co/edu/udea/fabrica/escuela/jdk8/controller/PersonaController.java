@@ -44,10 +44,28 @@ public class PersonaController {
     }
 
 
-    @GetMapping("/get-personas-por-edad")
+    @GetMapping("/get-personas-agrupadas-por-edad")
     public ResponseEntity< Map<Integer, List<Persona>>> getPersonasPorEdad() {
         Map<Integer, List<Persona>> personasPorEdad = personaService.agruparCantidadPersonasPorEdad();
         return ResponseEntity.ok(personasPorEdad);
+    }
+
+    @GetMapping("/peek-nombres-mayuscula")
+    public ResponseEntity<List<Persona>> findPersonaConNombreMayuscula() {
+        List<Persona> personaList = personaService.findPersonaConNombreMayuscula();
+        return ResponseEntity.ok(personaList);
+    }
+
+    @GetMapping("/comparator-sorted-edades")
+    public ResponseEntity<List<Persona>> findPersonaOrdenadaEdad() {
+        List<Persona> personaList = personaService.findPersonaOrdenadaEdad();
+        return ResponseEntity.ok(personaList);
+    }
+
+    @GetMapping("/distinct-ciudades")
+    public ResponseEntity<List<List<String>>> findCiudadesDistintas(){
+        List<List<String>> CiudadList = personaService.findCiudadesDistintas();
+        return ResponseEntity.ok(CiudadList);
     }
 
 }
